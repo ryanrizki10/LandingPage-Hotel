@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Hotel-Web</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Philosopher:wght@700&family=Roboto:ital,wght@1,300&display=swap');
@@ -46,7 +47,7 @@
 
         /* Navbar Start */
         .navbar {
-            /* background-color: turquoise; */
+            background-color: turquoise;
             position: fixed;
             left: 0;
             top: 0;
@@ -57,37 +58,81 @@
         }
 
         .navbar .navbar-wrapper {
-            /* background-color: #fff; */
+            background-color: #fff;
             margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .navbar .navbar-wrapper .logo{
+        .navbar .navbar-wrapper .logo {
             font-family: var(--logo-font);
             font-size: 1.875rem;
             color: var(--main-color);
         }
 
-        .navbar .navbar-wrapper .menu{
+        .navbar .navbar-wrapper .menu {
             display: flex;
             gap: 70px;
+            background-color: antiquewhite;
 
         }
 
-        .navbar .navbar-wrapper .menu .menu-link{
+        .navbar .navbar-wrapper .menu .menu-link {
             font-family: var(--heading-font);
             font-size: 1.25rem;
             font-weight: 500;
 
         }
 
-        .active{
+        .active {
             border-bottom: 3px solid var(--main-color);
         }
 
+        .navbar .navbar-wrapper .icon-menu i {
+            font-size: 2rem;
+            color: var(--main-color);
+            display: none;
+
+        }
+
         /* Navbar End */
+
+        /* Responsive */
+        @media screen and (max-width: 991px) {
+            .navbar .navbar-wrapper .menu .menu-link {
+                font-family: var(--heading-font);
+                font-size: 1rem;
+                font-weight: 500;
+                /* color: red; */
+            }
+
+            .navbar .navbar-wrapper {
+                padding: 0 20px;
+
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar .navbar-wrapper .menu {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+                width: 80%;
+                text-align: center;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            }
+
+            .navbar .navbar-wrapper .icon-menu i {
+                display: initial;
+
+            }
+
+
+        }
     </style>
 </head>
 
@@ -103,9 +148,29 @@
                     <li class="menu-item"><a href="#gallery" class="menu-link">Gallery</a></li>
                     <li class="menu-item"><a href="#contact" class="menu-link">Contact</a></li>
                 </ul>
+                <div class="icon-menu">
+                    <i class='bx bxs-grid-alt'></i>
+                </div>
             </div>
         </nav>
     </header>
+
+
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $('.icon-menu').click(function(){
+                
+            })
+        })
+
+
+
+    </script>
 
 
 </body>
