@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Boxicons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <title>Hotel-Web</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Philosopher:wght@700&family=Roboto:ital,wght@1,300&display=swap');
@@ -93,8 +95,13 @@
             font-size: 2rem;
             color: var(--main-color);
             display: none;
+            
 
         }
+
+        
+
+        
 
         /* Navbar End */
 
@@ -123,7 +130,12 @@
                 width: 80%;
                 text-align: center;
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: 0.5s ease-in-out;
+            }
 
+            .navbar .navbar-wrapper .menu.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                transition: 0.5s ease-in-out;
             }
 
             .navbar .navbar-wrapper .icon-menu i {
@@ -162,11 +174,19 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        $(document).ready(function(){
-            $('.icon-menu').click(function(){
-                
-            })
-        })
+        // $(document).ready(function(){
+        //     $('.icon-menu').click(function(){
+        //         $('.icon-menu').toggleClass('bx-x')
+        //     })
+        // })
+
+        $(document).ready(function () {
+            $('.icon-menu').click(function () {
+                $(this).find('i').toggleClass('bx-x').toggleClass('bxs-grid-alt')
+                $('.menu').toggleClass('active');
+            });
+        });
+
 
 
 
